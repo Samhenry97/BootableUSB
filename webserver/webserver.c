@@ -218,6 +218,7 @@ void runServer(threadpool_t *pool, int *server_sock) {
 }
 
 int main(int argc, char **argv) {
+    printf("BANANA\n");
     int ret = 1;
 
     // Network server/client context

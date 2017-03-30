@@ -64,7 +64,6 @@ int parse_options(int argc, char * const argv[]) {
     }
 
     g_settings.cwd = getcwd(NULL, 0);
-    g_settings.bindport = getenv("PORT");
     ret = 0;
 cleanup:
     return ret;

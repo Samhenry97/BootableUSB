@@ -1,1 +1,1 @@
-web: ./webserver/webserver -q 10000 -w 64 -v -h bootableusb.herokuapp.com
+web: ./webserver/webserver -q 10000 -w 64 -v -p $PORT

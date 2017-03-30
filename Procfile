@@ -1,1 +1,1 @@
-web: chmod +x ./webserver/webserver && ./webserver/webserver -q 10000 -w 64 -v -p $PORT
+web: chmod +x ./webserver/webserver && ./webserver/webserver -q 10000 -w 64 -v -p $PORT -h bootableusb.herokuapp.com

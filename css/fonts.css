@@ -1,0 +1,20 @@
+@font-face {
+	font-family: Kayak;
+	font-weight: bold;
+	src: url("fonts/kayak/KayakBold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url("fonts/raleway.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: Adam;
+	src: url("fonts/adam.otf") format("opentype");
+}
+
+@font-face {
+	font-family: Bariol;
+	src: url("fonts/bariol.ttf") format("truetype");
+}

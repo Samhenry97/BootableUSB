@@ -254,6 +254,8 @@ int main(int argc, char **argv) {
     }
     pool->verbose = g_settings.verbose;
 
+    printf("Bound And Listening...\n");
+
     runServer(pool, &server_sock);
     threadpoolDestroy(pool);    // Kill remaining connections, close threadpool
     ret = 0;

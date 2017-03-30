@@ -1,1 +1,1 @@
-web: ./webserver/make && chmod +x ./webserver/webserver && ./webserver/webserver -q 10000 -w 64 -v -p $PORT -h localhost
+web: ./webserver/webserver -q 10000 -w 64 -v -p $PORT -h localhost

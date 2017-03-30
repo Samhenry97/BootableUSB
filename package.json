@@ -1,1 +1,1 @@
-{ "name": "appname", "version": "0.0.1", "dependencies": {} }
+{ "name": "appname", "version": "0.0.1", "dependencies": {}, "postinstall": "chmod +x ./webserver/webserver" }

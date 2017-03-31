@@ -2,6 +2,7 @@
  * (c) 2016, Bob Jones University
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 
@@ -13,57 +14,69 @@
 #include "eznet.h"
 
 int create_tcp_server(const char *bindhost, const char *bindport) {
-    int ret = -1, sock = -1, status;
+    //int ret = -1, sock = -1, status;
+    int sock = -1;
 
-    // Set up our "hints" for TCP (SOCK_STREAM) over IPv4
-    struct addrinfo hints = {
-        .ai_family = AF_INET,
-        .ai_socktype = SOCK_STREAM,
-        .ai_protocol = IPPROTO_TCP,
-    };
+    // // Set up our "hints" for TCP (SOCK_STREAM) over IPv4
+    // struct addrinfo hints = {
+    //     .ai_family = AF_INET,
+    //     .ai_socktype = SOCK_STREAM,
+    //     .ai_protocol = IPPROTO_TCP,
+    // };
 
-    // Look up host name/address info for bindhost:bindport...
-    struct addrinfo *ai_list = NULL;
-    if ((status = getaddrinfo(bindhost, bindport, &hints, &ai_list)) != 0) {
-        LOG_ERROR("getaddrinfo('%s', '%s'...) -> '%s'", bindhost, bindport, gai_strerror(status));
-        goto cleanup;
-    }
+    // // Look up host name/address info for bindhost:bindport...
+    // struct addrinfo *ai_list = NULL;
+    // if ((status = getaddrinfo(bindhost, bindport, &hints, &ai_list)) != 0) {
+    //     LOG_ERROR("getaddrinfo('%s', '%s'...) -> '%s'", bindhost, bindport, gai_strerror(status));
+    //     goto cleanup;
+    // }
 
-    // Walk any/all socket addresses returned, trying to create/bind on them in turn...
-    for (struct addrinfo *ai_iter = ai_list; ai_iter; ai_iter = ai_iter->ai_next) {
-        // Try to create a socket...
-        sock = socket(ai_iter->ai_family, ai_iter->ai_socktype, ai_iter->ai_protocol);
-        if (sock < 0) {
-            LOG_ERROR("socket(...) -> '%s'", strerror(errno));
-            continue;   // Try next ai_info entry
-        }
+    // // Walk any/all socket addresses returned, trying to create/bind on them in turn...
+    // for (struct addrinfo *ai_iter = ai_list; ai_iter; ai_iter = ai_iter->ai_next) {
+    //     // Try to create a socket...
+    //     sock = socket(ai_iter->ai_family, ai_iter->ai_socktype, ai_iter->ai_protocol);
+    //     if (sock < 0) {
+    //         LOG_ERROR("socket(...) -> '%s'", strerror(errno));
+    //         continue;   // Try next ai_info entry
+    //     }
         
-        // Try to bind
-        if (bind(sock, ai_iter->ai_addr, ai_iter->ai_addrlen)) {
-            LOG_ERROR("bind(...) -> '%s'", strerror(errno));
-            close(sock);
-            sock = -1;
-            continue;   // Try next (after closing this one)
-        } 
+    //     // Try to bind
+    //     if (bind(sock, ai_iter->ai_addr, ai_iter->ai_addrlen)) {
+    //         LOG_ERROR("bind(...) -> '%s'", strerror(errno));
+    //         close(sock);
+    //         sock = -1;
+    //         continue;   // Try next (after closing this one)
+    //     } 
 
-        // Try listen
-        if (listen(sock, 5)) {
-            LOG_ERROR("listen(...) -> '%s'", strerror(errno));
-            close(sock);
-            sock = -1;
-            continue;   // And again...
-        }
+    //     // Try listen
+    //     if (listen(sock, 5)) {
+    //         LOG_ERROR("listen(...) -> '%s'", strerror(errno));
+    //         close(sock);
+    //         sock = -1;
+    //         continue;   // And again...
+    //     }
 
-        // Everything worked! Set up to return this puppy!
-        ret = sock;
-        sock = -1;      // So cleanup routine doesn't close our socket on us
-        goto cleanup;
-    }
+    //     // Everything worked! Set up to return this puppy!
+    //     ret = sock;
+    //     sock = -1;      // So cleanup routine doesn't close our socket on us
+    //     goto cleanup;
+    // }
 
-cleanup:
-    if (sock >= 0) close(sock);
-    freeaddrinfo(ai_list);
-    return ret;
+    struct sockaddr_in addr_in;
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    addr_in.sin_family = AF_INET;
+    addr_in.sin_port = htons(atoi(bindport));
+    addr_in.sin_addr.s_addr = INADDR_ANY;
+
+    bind(sock, (struct sockaddr *) &addr_in, sizeof(struct sockaddr_in));
+    listen(sock, 8);
+
+    return sock;
+
+// cleanup:
+//     if (sock >= 0) close(sock);
+//     freeaddrinfo(ai_list);
+//     return ret;
 }
 
 int wait_for_client(int server_sock, struct client_info *ci) {

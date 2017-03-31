@@ -19,13 +19,13 @@ $(document).ready(function() {
 
 	if(navigator.appVersion.indexOf("Win") != -1) {
 		$('#windows').toggleClass('suggested');
-		$('#detected').html('We\'ve detected that you are running Windows.');
+		$('#detected').html('We\'ve detected that you are running Windows. <br><a class=\'button\' href=\'windows.html\'>Go!</a>');
 	} else if(navigator.appVersion.indexOf("Mac") != -1) {
 		$('#mac').toggleClass('suggested');
-		$('#detected').html('We\'ve detected that you are running Mac OS X.');
+		$('#detected').html('We\'ve detected that you are running Mac OS X. <br><a class=\'button\' href=\'mac.html\'>Go!</a>');
 	} else if(navigator.appVersion.indexOf("Linux") != -1) {
 		$('#linux').toggleClass('suggested');
-		$('#detected').html('We\'ve detected that you are running Linux.');
+		$('#detected').html('We\'ve detected that you are running Linux. <br><a class=\'button\' href=\'linux.html\'>Go!</a>');
 	}
 
 });

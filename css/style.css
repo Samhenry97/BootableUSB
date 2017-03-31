@@ -133,6 +133,18 @@ p {
 	margin: 5px;
 }
 
+.suggested {
+	background-color: #252839;
+	-webkit-animation: bounce 1s infinite;
+	-moz-animation: bounce 1s infinite;
+	animation: bounce 1s infinite;
+}
+
+#detected {
+	margin-top: 20px;
+	color: green;
+}
+
 /********************************************************************************/
 /********************************************************************************/
 /********************************************************************************/

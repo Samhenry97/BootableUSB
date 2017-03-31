@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	$('a[href="#"]').click(function() {
 		$('html, body').animate({ scrollTop: 0 }, 'slow');
 	});
@@ -15,4 +16,16 @@ $(document).ready(function() {
 	        window.location.hash = target;
 	    });
 	});
+
+	if(navigator.appVersion.indexOf("Win") != -1) {
+		$('#windows').toggleClass('suggested');
+		$('#detected').html('We\'ve detected that you are running Windows.');
+	} else if(navigator.appVersion.indexOf("Mac") != -1) {
+		$('#mac').toggleClass('suggested');
+		$('#detected').html('We\'ve detected that you are running Mac OS X.');
+	} else if(navigator.appVersion.indexOf("Linux") != -1) {
+		$('#linux').toggleClass('suggested');
+		$('#detected').html('We\'ve detected that you are running Linux.');
+	}
+
 });

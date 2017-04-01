@@ -28,4 +28,12 @@ $(document).ready(function() {
 		$('#detected').html('We\'ve detected that you are running Linux. <br><a class=\'button\' href=\'linux.html\'>Go!</a>');
 	}
 
+	var checkboxes = document.querySelectorAll('input[type=checkbox]');
+	for(var i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].addEventListener('change', function() {
+			$change = ($('input:checkbox:checked').length / checkboxes.length) * 100;
+			$('#percent').css('width', $change + '%');
+		});
+	}
+
 });

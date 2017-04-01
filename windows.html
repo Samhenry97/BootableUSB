@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div id='progressContainer'>
-		<h4>Completion:</h4>
+		<p>Completion: <span id='completeamt'>0</span>%</p>
 		<div id='progress'><div id='percent'></div></div>
 	</div>
 
@@ -53,6 +53,9 @@
 				<div class='step small-1 columns'>2</div>
 				<div class='stepcontent small-8 columns'>
 					<p>Insert Your USB Flash Drive into a running computer</p>
+					<hr>
+					<p>You can use Windows Explorer to check to verify that the flash drive is connected, as shown in the image below.</p>
+					<img src='img/windows/explorer.png'/>
 				</div>
 				<div class='small-3 columns'>
 					<input class="styled-checkbox" id="insertusb" type="checkbox"><label class='complete' for="insertusb">Mark Complete</label>
@@ -62,7 +65,18 @@
 	</div>
 	<div class='section1'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>3</div>
+				<div class='stepcontent small-8 columns'>
+					<p>Open Rufus and select your flash drive in the <b>Device</b> dropdown.</p>
+					<hr>
+					<p>Note: Be sure that the device you select is your flash drive, not some other disk. The following process will wipe the entire disk, so be sure no critical information is on the flash drive.</p>
+					<img src='img/windows/device.png'/>
+				</div>
+				<div class='small-3 columns'>
+					<input class="styled-checkbox" id="selectdevice" type="checkbox"><label class='complete' for="selectdevice">Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='section2'>

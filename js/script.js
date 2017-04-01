@@ -33,6 +33,13 @@ $(document).ready(function() {
 		checkboxes[i].addEventListener('change', function() {
 			$change = ($('input:checkbox:checked').length / checkboxes.length) * 100;
 			$('#percent').css('width', $change + '%');
+			$('#completeamt').html($change.toFixed());
+
+			if($change == 100) {
+				$('#progressContainer').addClass('finished');
+			} else {
+				$('#progressContainer').removeClass('finished');
+			}
 		});
 	}
 

@@ -29,6 +29,16 @@ $(document).ready(function() {
 	}
 
 	var checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+	var cookie = getCookie('check');
+	if(cookie.length == checkboxes.length) {
+		for(var i = 0; i < cookie.length; i++) {
+			if(cookie[i] == '1') {
+				checkboxes[i].checked = true;
+			}
+		}
+	}
+	
 	for(var i = 0; i < checkboxes.length; i++) {
 		checkboxes[i].addEventListener('change', function(e) {
 			$change = ($('input:checkbox:checked').length / checkboxes.length) * 100;
@@ -47,15 +57,6 @@ $(document).ready(function() {
 				}
 			}
 		});
-
-		var cookie = getCookie('check');
-		if(cookie.length == checkboxes.length) {
-			for(var i = 0; i < cookie.length; i++) {
-				if(cookie[i] == '1') {
-					checkboxes[i].checked = true;
-				}
-			}
-		}
 	}
 
 });

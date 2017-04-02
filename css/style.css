@@ -188,6 +188,7 @@ p {
 	text-align: center;
 	background-color: rgba(50, 50, 50, 1);
 	transition-duration: .5s;
+	z-index: 2000;
 }
 
 #progress {
@@ -205,6 +206,9 @@ p {
 
 .finished {
 	background-color: rgba(0, 100, 0, 1) !important;
+	-webkit-animation: bounce 1s infinite;
+	-moz-animation: bounce 1s infinite;
+	animation: bounce 1s infinite;
 }
 
 /********************************************************************************/

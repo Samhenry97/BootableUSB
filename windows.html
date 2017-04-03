@@ -29,7 +29,6 @@
 		</div>
 	</div>
 
-    <!-- Checkbox: <div><input class='styled-checkbox' id='features-lcd' type='checkbox' value='lcd'><label for='features-lcd'></label></div> -->
     <div>
 	<div class='section'>
 		<div class='row'>
@@ -81,27 +80,87 @@
 	</div>
 	<div class='section'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>4</div>
+				<div class='stepcontent small-8 columns'>
+					<p>Click on the <b>CD</b> icon next to <b>FreeDOS</b> dropdown list.</p>
+					<img src='img/windows/selectISO.png'/>
+					<p>When the dialog box comes up, find and select the ISO for the operating system that you downloaded and then select <b>Open</b></p>
+					<img src='img/windows/explorerISO.png'/>
+				</div>
+				<div class='small-3 columns'>
+					<input class='styled-checkbox' id='selectISO' type='checkbox'><label class='complete' for='selectISO'>Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='section'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>5</div>
+				<div class='stepcontent small-8 columns'>
+					<p>Press <b>Start</b> to start creating the bootable USB drive with Rufus.</p>
+					<img src='img/windows/rufusStart.png'/>
+					<p>A confirmation box will pop up, letting you know that your device will be wiped. Select <b>Okay</b> if you are sure no critical information is on the device.</p>
+					<hr>
+					<p>Caution: Be sure all critical data is backed up on the device, as this process will wipe the flash drive.</p>
+					<img src='img/windows/confirmImage.png'/>
+				</div>
+				<div class='small-3 columns'>
+					<input class='styled-checkbox' id='startConfirm' type='checkbox'><label class='complete' for='startConfirm'>Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='section'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>6</div>
+				<div class='stepcontent small-8 columns'>
+					<p>When the process has finished, it should look like it does in the image below. Your flash drive is ready to be booted!</p>
+					<img src='img/windows/rufusFinished.png'/>
+				</div>
+				<div class='small-3 columns'>
+					<input class='styled-checkbox' id='rufusFinished' type='checkbox'><label class='complete' for='rufusFinished'>Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='section'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>7</div>
+				<div class='stepcontent small-8 columns'>
+					<p>The last step is to verify that the flash drive is removed safely.</p>
+					<hr>
+					<p>Safely remove the device as shown in the image below.</p>
+					<img src='img/windows/safeRemove.png'/>
+				</div>
+				<div class='small-3 columns'>
+					<input class='styled-checkbox' id='safeRemove' type='checkbox'><label class='complete' for='safeRemove'>Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='section'>
 		<div class='row'>
-
+			<div>
+				<div class='step small-1 columns'>8</div>
+				<div class='stepcontent small-8 columns'>
+					<h2 style='text-align: left;'>Last Steps</h2>
+					<hr>
+					<p>The last step is to boot your computer using the flash drive you just created. This process will vary from computer to computer, and will not be covered in this tutorial. Here is a list of helpful links to get started with this:</p>
+					<ul>
+						<li><a href='http://lifehacker.com/5991848/how-to-boot-from-a-cd-or-usb-drive-on-any-pc' target='_blank'>Any Device</a></li>
+						<li><a href='http://www.isunshare.com/windows-password/how-to-set-your-computer-to-boot-from-usb-drive.html' target='_blank'>Booting from USB</a></li>
+						<li><a href='http://blog.lenovo.com/en/blog/how-to-enter-the-bios-setup-utility-or-boot-menu-with-windows-8-1' target='_blank'>Lenovo</a></li>
+						<li><a href='https://www.lifewire.com/how-to-boot-from-a-usb-device-2626091' target='_blank'>Another Guide</a></li>
+					</ul>
+				</div>
+				<div class='small-3 columns'>
+					<input class='styled-checkbox' id='lastSteps' type='checkbox'><label class='complete' for='lastSteps'>Mark Complete</label>
+				</div>
+			</div>
 		</div>
 	</div>
 	</div>

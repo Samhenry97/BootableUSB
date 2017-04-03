@@ -97,7 +97,6 @@ p {
 
 .section ul {
 	text-align: left;
-	margin-left: 30%;
 }
 
 .button {
@@ -166,7 +165,12 @@ p {
 
 .stepcontent img {
 	margin-top: 20px;
+	margin-bottom: 20px;
 	box-shadow: 0 0 2px 2px black;
+}
+
+.stepcontent ul {
+	margin-left: 40px;
 }
 
 .complete {

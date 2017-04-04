@@ -17,6 +17,19 @@ $(document).ready(function() {
 	    });
 	});
 
+	$('.navTrigger').click(function() {
+		$(this).toggleClass('active');
+		$('.navContent').toggleClass('show');
+
+		if($(this).hasClass('active')) {
+			$('html, body').css({ overflow: 'hidden', height: '100%' });
+			$('#progressContainer').css({ opacity: '0', visibility: 'hidden' });
+		} else {
+			$('html, body').css({ overflow: 'auto', height: 'auto' });
+			$('#progressContainer').css({ opacity: '1', visibility: 'visible' });
+		}
+	});
+
 	if(navigator.appVersion.indexOf("Win") != -1) {
 		$('#windows').toggleClass('suggested');
 		$('#detected').html('We\'ve detected that you are running Windows. <br><a class=\'button\' href=\'windows.html\'>Go!</a>');

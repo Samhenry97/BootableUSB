@@ -13,7 +13,7 @@
 	<script type='text/javascript' src='js/script.js'></script>
 </head>
 <body>
-	<div class='header'>
+	<div class='header hide-for-small-only'>
 		<div class='row'>
 			<ul class='menubar'>
 				<a href='index.html'><img src='img/usb.png'/></a>
@@ -24,6 +24,43 @@
 			</ul>
 		</div>
 	</div>
+
+	<div class='header show-for-small-only'>
+		<div class="navTrigger">
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+		<div class='navContent'>
+			<h3>Pages</h3>
+			<ul>
+				<li class='activemenu'><a href='index.html'>Home</a></li>
+				<li><a href='windows.html'>Windows</a></li>
+				<li><a href='mac.html'>Mac OS X</a></li>
+				<li><a href='linux.html'>Linux</a></li>
+			</ul>
+			<h3>Utilities</h3>
+			<ul>
+				<li><a href='https://rufus.akeo.ie/' target='_blank'>Rufus</a></li>
+				<li><a href='https://www.microsoft.com/en-us/download/windows-usb-dvd-download-tool' target='_blank'>Windows Tool</a></li>
+				<li><a href='http://unetbootin.github.io/' target='_blank'>UNetbootin</a></li>
+			</ul>
+			<h3>External Links</h3>
+			<ul>
+				<li><a href='https://technet.microsoft.com/en-us/library/jj200124(v=ws.11).aspx' target='_blank'>Microsoft Docs</a></li>
+				<li><a href='https://support.apple.com/en-us/HT201372' target='_blank'>Mac OS X Docs</a></li>
+				<li><a href='https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu' target='_blank'>Linux Docs</a></li>
+			</ul>
+			<h3>Contact</h3>
+			<ul>
+				<li><a href='mailto:smlhnry@gmail.com'>Sam Henry</a></li>
+				<li><a href='mailto:shenr124@students.bju.edu'>Student Email</a></li>
+				<li><a href='mailto:smlhnry@gmail.com'>Personal Email</a></li>
+			</ul>
+		</div>
+	</div>
+
+
 
 	<div>
 	<div class='section'>
@@ -42,22 +79,35 @@
 	<div class='section'>
 		<div class='row'>
 			<h2>What Do I Need?</h2>
-			<div class='row'>
-				<div class='small-2 columns'>&nbsp;</div>
-				<div class='small-4 columns'>
+			<div class='row hide-for-small-only'>
+				<div class='medium-2 columns'>&nbsp;</div>
+				<div class='medium-4 columns'>
 					<ul>
 						<li>A <a href='https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=flash+drive' target='_blank'>USB Flash Drive</a>, preferably 4 GB or more</li>
 						<li>A working computer with a USB port</li>
 						<li>An <a href='https://en.wikipedia.org/wiki/ISO_image' target='_blank'>ISO file</a> of your operating system</li>
 					</ul>
 				</div>
-				<div class='small-4 columns'>
+				<div class='medium-4 columns'>
 					<ul>
 						<li>A few hours of your time</li>
 						<li>A strong internet connection</li>
 					</ul>
 				</div>
-				<div class='small-2 columns'>&nbsp;</div>
+				<div class='medium-2 columns'>&nbsp;</div>
+			</div>
+			<div class='row show-for-small-only'>
+				<div class='small-1 columns'>&nbsp;</div>
+				<div class='small-10 columns'>
+					<ul>
+						<li>A <a href='https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=flash+drive' target='_blank'>USB Flash Drive</a>, preferably 4 GB or more</li>
+						<li>A working computer with a USB port</li>
+						<li>An <a href='https://en.wikipedia.org/wiki/ISO_image' target='_blank'>ISO file</a> of your operating system</li>
+						<li>A few hours of your time</li>
+						<li>A strong internet connection</li>
+					</ul>
+				</div>
+				<div class='small-1 columns'>&nbsp;</div>
 			</div>
 		</div>
 	</div>
@@ -71,7 +121,7 @@
 		<div class='row'>
 			<h2>Get Started</h2>
 			<p>Choose Your Operating System:</p>
-			<center><div class='row'>
+			<center><div class='row oschoice'>
 				<a href='windows.html' class='os' id='windows'>
 					<img class='osimg' src='img/windows.png'/>
 					<p>Windows</p>
@@ -90,7 +140,7 @@
 	</div>
 	</div>
 
-	<div class='footer'>
+	<div class='footer hide-for-small-only'>
 		<div class='row'>
 			<a href='index.html' class='footer-icon fa fa-usb fa-3x'></a>
 			<a href='#' class='top fa fa-arrow-up fa-2x'></a>

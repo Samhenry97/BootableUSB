@@ -82,6 +82,11 @@ $(document).ready(function() {
 		});
 	}
 
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('safari') != -1 && agent.indexOf('chrome') == -1) {
+		$('.step').addClass('stepsafari');
+	}
+
 });
 
 window.onbeforeunload = function() {

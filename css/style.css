@@ -281,6 +281,10 @@ p {
 	vertical-align: middle;
 }
 
+.stepsafari {
+	padding-top: 10px;
+}
+
 @media screen and (max-width: 39.9375em) {
 	.step {
 		margin: 10px auto;

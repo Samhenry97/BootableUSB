@@ -82,8 +82,9 @@ $(document).ready(function() {
 		});
 	}
 
+	// Safari, Safari... -_-
 	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('safari') != -1 && agent.indexOf('chrome') == -1) {
+	if(agent.indexOf('safari') != -1 && agent.indexOf('chrome') == -1 && agent.indexOf('opera') == -1 && agent.indexOf('opr') == -1) {
 		$('.step').addClass('stepsafari');
 	}
 

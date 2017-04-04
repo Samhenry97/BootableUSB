@@ -51,7 +51,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 		text-align: center;
 		color: white;
 		background-size: 100% 200%;
-		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #FC4A1A 50%);
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 51%, #FC4A1A 49%);
 		transition: background .4s;
 	}
 

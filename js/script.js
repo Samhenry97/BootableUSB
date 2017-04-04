@@ -61,7 +61,7 @@ $(document).ready(function() {
 				
 				if(e.srcElement.checked) {
 					$('html, body').animate({
-						'scrollTop': $(e.srcElement).parent().parent().parent().parent().next().offset().top
+						'scrollTop': $(e.srcElement).parent().parent().parent().next().offset().top
 					}, 'slow', 'swing');
 				}
 			}

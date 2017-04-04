@@ -88,7 +88,7 @@ p {
 }
 
 .section:nth-child(odd) {
-	background-color: rgb(220, 220, 220);
+	background-color: white;
 }
 
 .section:nth-child(even) {
@@ -142,7 +142,7 @@ p {
 }
 
 .step {
-	margin: 5px;
+	margin: 10px;
 	color: white;
 	text-align: center;
 	font-family: Adam;
@@ -151,6 +151,12 @@ p {
 	height: 55px;
 	font-size: 30px;
 	border-radius: 100%;
+}
+
+@media screen and (max-width: 39.9375em) {
+	.step {
+		margin: 10px auto;
+	}
 }
 
 .stepcontent {
@@ -182,17 +188,35 @@ p {
 	color: green;
 }
 
-#progressContainer {
-	color: white;
-	position: fixed;
-	width: 220px;
-	padding: 20px;
-	right: 5px;
-	bottom: 5px;
-	text-align: center;
-	background-color: rgba(50, 50, 50, 1);
-	transition-duration: .5s;
-	z-index: 2000;
+@media screen and (min-width: 40em) {
+	#progressContainer {
+		color: white;
+		position: fixed;
+		width: 220px;
+		padding: 20px;
+		right: 5px;
+		bottom: 5px;
+		text-align: center;
+		background-color: rgba(50, 50, 50, 1);
+		transition-duration: .5s;
+		z-index: 2000;
+	}
+}
+
+@media screen and (max-width: 39.9375em) {
+	#progressContainer {
+		color: white;
+		position: fixed;
+		width: 100%;
+		padding: 5px;
+		bottom: 0;
+		text-align: center;
+		box-shadow: 0 -2px 1px 0 black;
+		background-color: rgba(50, 50, 50, 1);
+		transition-duration: .5s;
+		opacity: 0.95;
+		z-index: 2000;
+	}
 }
 
 #progress {

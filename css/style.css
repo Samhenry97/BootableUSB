@@ -116,6 +116,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	}
 
 	.navContent li {
+		list-style: none;
 		margin: 5px;
 		text-align: center;
 	}
@@ -260,13 +261,6 @@ p {
 	margin: 5px;
 }
 
-
-@media screen and (max-width: 39.9375em) {
-	.oschoice {
-
-	}
-}
-
 .suggested {
 	background-color: #252839;
 	-webkit-animation: bounce 1s infinite;
@@ -284,6 +278,7 @@ p {
 	height: 55px;
 	font-size: 30px;
 	border-radius: 100%;
+	vertical-align: middle;
 }
 
 @media screen and (max-width: 39.9375em) {

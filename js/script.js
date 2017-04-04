@@ -72,9 +72,10 @@ $(document).ready(function() {
 			} else {
 				$('#progressContainer').removeClass('finished');
 				
-				if(e.srcElement.checked) {
+				var caller = e.srcElement || e.target;
+				if(caller.checked) {
 					$('html, body').animate({
-						'scrollTop': $(e.srcElement).parent().parent().parent().next().offset().top
+						'scrollTop': $(caller).parent().parent().parent().next().offset().top
 					}, 'slow', 'swing');
 				}
 			}

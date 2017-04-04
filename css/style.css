@@ -270,19 +270,16 @@ p {
 
 .step {
 	margin: 10px;
+	padding-top: 5px;
 	color: white;
 	text-align: center;
-	font-family: Adam;
+	font-family: Bariol;
 	background-color: rgba(0, 0, 0, .5);
 	width: 55px;
 	height: 55px;
 	font-size: 30px;
 	border-radius: 100%;
 	vertical-align: middle;
-}
-
-.stepsafari {
-	padding-top: 10px;
 }
 
 @media screen and (max-width: 39.9375em) {

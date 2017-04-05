@@ -106,20 +106,20 @@ int parseHeader(FILE *stream, FILE **response, struct stat *responseStats, char 
     if(fgets(headerBuff, sizeof headerBuff - 1, stream) != NULL && headerBuff[strlen(headerBuff) - 1] == '\n') {
         header = strSplit(headerBuff);
         if(splitLen(header) != 3) {
-            *responseCode = "HTTP/1.0 400 Bad Request";
+            *responseCode = "400.html";
             *error = ERR_FORMAT;
             goto cleanup;
         } else if(strcmp(header[0], "GET") != 0) {
-            *responseCode = "HTTP/1.0 501 Not Implemented";
+            *responseCode = "501.html";
             *error = ERR_NOT_IMPLEMENTED;
             goto cleanup;
         } else if(strlen(header[2]) != 8 || strstr(header[2], "HTTP/") != header[2] || !isdigit(header[2][5]) || header[2][6] != '.' || !isdigit(header[2][7])) {
-            *responseCode = "HTTP/1.0 400 Bad Request";
+            *responseCode = "400.html";
             *error = ERR_FORMAT;
             goto cleanup;
         }
     } else {
-        *responseCode = "HTTP/1.0 400 Bad Request";
+        *responseCode = "400.html";
         *error = ERR_OVERFLOW;
         goto cleanup;
     }
@@ -127,11 +127,11 @@ int parseHeader(FILE *stream, FILE **response, struct stat *responseStats, char 
     if(strcmp(header[1], "/") == 0) { header[1] = "index.html"; } // Default to index.html
     int isValid = validFile(header[1], response, responseStats);
     if(isValid == -1) {
-        *responseCode = "HTTP/1.0 404 Not Found";
+        *responseCode = "404.html";
         *error = ERR_NOT_FOUND;
         goto cleanup;
     } else if(isValid == -2) {
-        *responseCode = "HTTP/1.0 403 Forbidden";
+        *responseCode = "403.html";
         *error = ERR_FORBIDDEN;
         goto cleanup;
     }
@@ -148,10 +148,11 @@ void *handle_client(void *arg) {
     FILE *stream = NULL;
     FILE *response = NULL;
     struct stat responseStats;
-    char *contentType = "text/plain";
+    char *contentType = "text/html";
     char *responseCode = "HTTP/1.0 200 OK";
     char *error = "ERROR";
     char buff[256];
+    size_t numRead;
 
     if(g_settings.verbose) blog(COLOR_YELLOW "Handling Connection: %s:%d" COLOR_RESET, client->ip, client->port);
 
@@ -171,7 +172,6 @@ void *handle_client(void *arg) {
     fprintf(stream, "Content-Type: %s\r\n", contentType);
     fprintf(stream, "Content-Length: %d\r\n\r\n", (int) responseStats.st_size);
 
-    size_t numRead;
     while((numRead = fread(buff, 1, sizeof buff, response)) == sizeof buff) {
         fwrite(buff, 1, sizeof buff, stream);
     }
@@ -181,10 +181,15 @@ void *handle_client(void *arg) {
 
 error:
     eatStream(&stream);
+    validFile(error, &response, &responseStats);
     fprintf(stream, "%s\r\n", responseCode);
     fprintf(stream, "Content-Type: %s\r\n", contentType);
-    fprintf(stream, "Content-Length: %d\r\n\r\n", (int) strlen(error));
-    fprintf(stream, "%s", error);
+    fprintf(stream, "Content-Length: %d\r\n\r\n", (int) responseStats.st_size);
+    
+    while((numRead = fread(buff, 1, sizeof buff, response)) == sizeof buff) {
+        fwrite(buff, 1, sizeof buff, stream);
+    }
+    fwrite(buff, 1, numRead, stream);   // Write any data that is not % buffer size
 
 cleanup:
     if (stream) fclose(stream);

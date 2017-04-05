@@ -244,6 +244,7 @@ p {
 
 @media screen and (max-width: 39.9375em) {
 	.error h1 {
+		margin-top: 60px;
 		font-size: 8em;
 		color: red;
 		font-family: Adam;

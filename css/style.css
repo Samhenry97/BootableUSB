@@ -20,6 +20,14 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	margin: 0;
 }
 
+a:not(.fa) {
+	text-decoration: underline;
+}
+
+a:hover:not(.fa) {
+	text-decoration: none;
+}
+
 /********************************************************************************/
 /********************************************************************************/
 /********************************************************************************/
@@ -207,6 +215,10 @@ p {
 	.section {
 		padding: 30px 0;
 	}
+
+	.section:first-child {
+		padding-top: 80px;
+	}
 }
 
 @media screen and (min-width: 40em) {
@@ -342,7 +354,8 @@ p {
 
 @media screen and (max-width: 39.9375em) {
 	.step {
-		margin: 10px auto;
+		margin: auto;
+		margin-bottom: 20px;
 	}
 }
 
@@ -481,6 +494,12 @@ p {
 /********************************************************************************/
 /********************************************************************************/
 /* Checkbox */
+
+@media screen and (max-width: 39.9375em) {
+	.checkbox-wrapper {
+		margin-top: 13px;
+	}
+}
 
 .styled-checkbox {
 	z-index: -20;

@@ -106,33 +106,33 @@ int parseHeader(FILE *stream, FILE **response, struct stat *responseStats, char 
     if(fgets(headerBuff, sizeof headerBuff - 1, stream) != NULL && headerBuff[strlen(headerBuff) - 1] == '\n') {
         header = strSplit(headerBuff);
         if(splitLen(header) != 3) {
-            *responseCode = "400.html";
-            *error = ERR_FORMAT;
+            *responseCode = "HTTP/1.0 400 Bad Request";
+            *error = "400.html";
             goto cleanup;
         } else if(strcmp(header[0], "GET") != 0) {
-            *responseCode = "501.html";
-            *error = ERR_NOT_IMPLEMENTED;
+            *responseCode = "HTTP/1.0 501 Not Implemented";
+            *error = "501.html";
             goto cleanup;
         } else if(strlen(header[2]) != 8 || strstr(header[2], "HTTP/") != header[2] || !isdigit(header[2][5]) || header[2][6] != '.' || !isdigit(header[2][7])) {
-            *responseCode = "400.html";
-            *error = ERR_FORMAT;
+            *responseCode = "HTTP/1.0 400 Bad Request";
+            *error = "400.html";
             goto cleanup;
         }
     } else {
-        *responseCode = "400.html";
-        *error = ERR_OVERFLOW;
+        *responseCode = "HTTP/1.0 400 Bad Request";
+        *error = "400.html";
         goto cleanup;
     }
 
     if(strcmp(header[1], "/") == 0) { header[1] = "index.html"; } // Default to index.html
     int isValid = validFile(header[1], response, responseStats);
     if(isValid == -1) {
-        *responseCode = "404.html";
-        *error = ERR_NOT_FOUND;
+        *responseCode = "HTTP/1.0 404 Not Found";
+        *error = "404.html";
         goto cleanup;
     } else if(isValid == -2) {
-        *responseCode = "403.html";
-        *error = ERR_FORBIDDEN;
+        *responseCode = "HTTP/1.0 403 Forbidden";
+        *error = "403.html";
         goto cleanup;
     }
     *contentType = getContentType(header[1]);
@@ -186,10 +186,12 @@ error:
     fprintf(stream, "Content-Type: %s\r\n", contentType);
     fprintf(stream, "Content-Length: %d\r\n\r\n", (int) responseStats.st_size);
     
-    while((numRead = fread(buff, 1, sizeof buff, response)) == sizeof buff) {
-        fwrite(buff, 1, sizeof buff, stream);
+    if(response) {
+        while((numRead = fread(buff, 1, sizeof buff, response)) == sizeof buff) {
+            fwrite(buff, 1, sizeof buff, stream);
+        }
+        fwrite(buff, 1, numRead, stream);   // Write any data that is not % buffer size
     }
-    fwrite(buff, 1, numRead, stream);   // Write any data that is not % buffer size
 
 cleanup:
     if (stream) fclose(stream);

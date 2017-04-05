@@ -226,11 +226,6 @@ p {
 	text-align: left;
 }
 
-.error {
-	position: relative;
-	overflow: hidden;
-}
-
 .error::after {
 	content: '';
 	display: block;
@@ -247,23 +242,44 @@ p {
 	background-size: cover;
 }
 
-.error h1 {
-	font-size: 20em;
-	color: red;
-	font-family: Adam;
-	margin-top: -0.2em;
+@media screen and (max-width: 39.9375em) {
+	.error h1 {
+		font-size: 8em;
+		color: red;
+		font-family: Adam;
+	}
+
+	.error h2 {
+		font-size: 3em;
+		color: black;
+	}
+
+	.error p {
+		font-size: 1em;
+		font-family: Kayak;
+		color: black;
+	}
 }
 
-.error h2 {
-	margin-top: -0.2em;
-	font-size: 10em;
-	color: black;
-}
+@media screen and (min-width: 40em) {
+	.error h1 {
+		font-size: 20em;
+		color: red;
+		font-family: Adam;
+		margin-top: -0.2em;
+	}
 
-.error p {
-	font-size: 3em;
-	font-family: Kayak;
-	color: black;
+	.error h2 {
+		margin-top: -0.2em;
+		font-size: 10em;
+		color: black;
+	}
+
+	.error p {
+		font-size: 3em;
+		font-family: Kayak;
+		color: black;
+	}
 }
 
 .button {

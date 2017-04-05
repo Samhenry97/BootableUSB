@@ -226,6 +226,46 @@ p {
 	text-align: left;
 }
 
+.error {
+	position: relative;
+	overflow: hidden;
+}
+
+.error::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0.4;
+	z-index: -1;
+	background: url('../img/err/error.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: cover;
+}
+
+.error h1 {
+	font-size: 20em;
+	color: red;
+	font-family: Adam;
+	margin-top: -0.2em;
+}
+
+.error h2 {
+	margin-top: -0.2em;
+	font-size: 10em;
+	color: black;
+}
+
+.error p {
+	font-size: 3em;
+	font-family: Kayak;
+	color: black;
+}
+
 .button {
 	margin-top: 10px;
 	margin-bottom: -10px;

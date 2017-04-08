@@ -31,7 +31,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 
 @media screen and (min-width: 40em) {
 	.header {
-		padding: 20px;
+		padding: 5px 10px;
 		background-color: #252839;
 	}
 
@@ -50,8 +50,9 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	}
 
 	.menubar li {
-		display: inline;
-		padding: 20px;
+		display: inline-block;
+		width: 100px;
+		padding: 20px 0;
 		text-align: center;
 		color: white;
 		background-size: 100% 200%;

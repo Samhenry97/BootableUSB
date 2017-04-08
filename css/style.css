@@ -92,16 +92,17 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 		font-family: Kayak;
 		opacity: 0;
 		visibility: hidden;
-		position: absolute;
-		top: 40px;
-		transition-duration: 0.3s;
+		top: 50px;
+		transition-duration: 0.5s;
 		width: 100%;
 		background-color: #252839;
+		transform: translateX(-100%);
 	}
 
-	.navContent .show {
+	.show {
 		visibility: visible;
 		opacity: 1;
+		transform: translateX(0%);
 	}
 
 	.navContent h3 {
@@ -303,6 +304,10 @@ p {
 	background-color: #AD2803;
 }
 
+.button:focus {
+	background-color: #AD2803;
+}
+
 .os {
 	margin-top: 30px;
 	display: inline-block;
@@ -373,7 +378,7 @@ p {
 .stepcontent img {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	box-shadow: 0 0 2px 2px black;
+	box-shadow: 0 0 3px 2px black;
 }
 
 .stepcontent ul {

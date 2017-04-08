@@ -83,7 +83,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	}
 
 	.section:last-child {
-		padding-bottom: 60px;
+		padding-bottom: 75px;
 	}
 
 	.navContent {
@@ -108,6 +108,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	}
 
 	.navContent h3 {
+		font-size: 25px;
 		text-align: center;
 		color: #FC4A1A;
 		border-bottom: 2px solid #FC4A1A;
@@ -116,16 +117,19 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	.navContent a {
 		font-size: 15px;
 		color: white;
-		width: 100%;
 	}
 
 	.navContent .activemenu {
-		background-color: rgba(255, 255, 255, .5);
+		background-color: rgba(255, 255, 255, .6);
+	}
+
+	.navContent .activemenu a {
+		color: black;
 	}
 
 	.navContent li {
 		list-style: none;
-		margin: 10px;
+		padding: 10px;
 		text-align: center;
 	}
 

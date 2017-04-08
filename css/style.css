@@ -463,6 +463,59 @@ p {
 	animation: bounce 1s infinite;
 }
 
+@media screen and (min-width: 39.9375em) {
+	.q, .a {
+		margin-left: 20px;
+	}
+
+	.question h5 {
+		margin-top: 8px;
+	}
+}
+
+@media screen and (max-width: 39.9375em) {
+	.q, .a {
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+	.question, .answer {
+		text-align: center;
+	}
+}
+
+.question h5 {
+	font-weight: bold;
+}
+
+.answer p {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.q, .a {
+	font-size: 28px;
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+	color: white;
+	text-align: center;
+	box-shadow: 0 0 3px 1px black;
+}
+
+.q {
+	padding-top: 5px;
+	padding-left: 14px;
+	background-color: #FC4A1A;
+}
+
+.a {
+	padding-top: 4px;
+	padding-left: 14px;
+	background-color: green;
+}
+
 /********************************************************************************/
 /********************************************************************************/
 /********************************************************************************/

@@ -533,18 +533,18 @@ p {
 /********************************************************************************/
 /* Footer */
 
-.footer {
+footer {
 	padding: 60px;
 	padding-top: 40px;
 	background-color: #252839;
 }
 
-.footer img {
+footer img {
 	width: 50px;
 	height: auto;
 }
 
-.footer ul {
+footer ul {
 	list-style: none;
 }
 
@@ -577,6 +577,25 @@ p {
 	color: white;
 	margin-bottom: 30px;
 	transition-duration: .3s;
+}
+
+.caution {
+	background-color: rgba(255, 0, 0, .2);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+.caution img {
+	box-shadow: none;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+}
+
+.caution p {
+	text-align: center;
 }
 
 @media screen and (max-width: 39.9375em) {

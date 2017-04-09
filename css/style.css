@@ -494,6 +494,18 @@ p {
 	text-align: left;
 }
 
+.answer li {
+	list-style: none;
+}
+
+.answer li p {
+	margin-left: 20px;
+}
+
+.answer p {
+	margin-bottom: 10px;
+}
+
 .q, .a {
 	font-size: 28px;
 	border-radius: 100%;
@@ -512,7 +524,7 @@ p {
 
 .a {
 	padding-top: 4px;
-	padding-left: 14px;
+	padding-left: 15px;
 	background-color: green;
 }
 

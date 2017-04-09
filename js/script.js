@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	var mobile = $('#mobile').css('display') == 'none';
+
 	$('a[href="#"]').click(function() {
 		$('html, body').animate({ scrollTop: 0 }, 'slow');
 	});
@@ -75,7 +77,7 @@ $(document).ready(function() {
 				var caller = e.srcElement || e.target;
 				if(caller.checked) {
 					$('html, body').animate({
-						'scrollTop': $(caller).parent().parent().parent().next().offset().top
+						'scrollTop': $(caller).parent().parent().parent().next().offset().top - (mobile ? 50 : 0)
 					}, 'slow', 'swing');
 				}
 			}

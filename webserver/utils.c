@@ -76,6 +76,16 @@ char *getContentType(char *input) {
         return "text/css";
     } else if(strcmp(tmp, "txt") == 0) {
         return "text/plain";
+    } else if(strcmp(tmp, "ttf") == 0 || strcmp(tmp, "otf") == 0) {
+        return "application/font-sfnt";
+    } else if(strcmp(tmp, "eot") == 0) {
+        return "application/vnd.ms-fontobject";
+    } else if(strcmp(tmp, "woff") == 0) {
+        return "application/font-woff";
+    } else if(strcmp(tmp, "woff2") == 0) {
+        return "application/font-woff2";
+    } else if(strcmp(tmp, "svg") == 0) {
+        return "image/svg+xml";
     } else {
         return "application/octet-stream";
     }

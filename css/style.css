@@ -38,6 +38,11 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	.header {
 		padding: 5px 10px;
 		background-color: #252839;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
 	}
 
 	.header a:first-child {
@@ -364,6 +369,11 @@ p {
 	margin-bottom: -10px;
 	border-radius: 3px;
 	background-color: #FC4A1A;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 .button:hover {

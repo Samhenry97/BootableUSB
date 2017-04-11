@@ -24,7 +24,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	text-shadow: 0 0 6px white;
 }
 
-::selection, ::-moz-selection, ::-webkit-selection, ::-o-selection, ::-ms-selection {
+::selection {
 	background-color: orange;
 	color: white;
 }

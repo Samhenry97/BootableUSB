@@ -24,6 +24,11 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	text-shadow: 0 0 6px white;
 }
 
+::selection, ::-moz-selection, ::-webkit-selection, ::-o-selection, ::-ms-selection {
+	background-color: orange;
+	color: white;
+}
+
 /********************************************************************************/
 /********************************************************************************/
 /********************************************************************************/
@@ -57,6 +62,10 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 		color: white;
 		background-size: 100% 200%;
 		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 51%, #FC4A1A 49%);
+		-webkit-transition: background .4s;
+		-moz-transition: background .4s;
+		-ms-transition: background .4s;
+		-o-transition: background .4s;
 		transition: background .4s;
 	}
 
@@ -94,17 +103,29 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 		opacity: 0;
 		visibility: hidden;
 		top: 50px;
-		transition-duration: 0.5s;
 		width: 100%;
 		bottom: 0;
 		background-color: #252839;
-		transform: translateX(-100%);
 		overflow-y: auto;
+		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
+		transform: translateX(-100%);
+		-webkit-transition-duration: 0.5s;
+		-moz-transition-duration: 0.5s;
+		-ms-transition-duration: 0.5s;
+		-o-transition-duration: 0.5s;
+		transition-duration: 0.5s;
 	}
 
 	.show {
 		visibility: visible;
 		opacity: 1;
+		-webkit-transform: translateX(0%);
+		-moz-transform: translateX(0%);
+		-ms-transform: translateX(0%);
+		-o-transform: translateX(0%);
 		transform: translateX(0%);
 	}
 
@@ -158,39 +179,66 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, li, a { /* Resets */
 	}
 
 	.navTrigger i:nth-child(1) {
-		-webkit-animation:outT 0.3s backwards;
-		animation:outT 0.3s backwards;
-		-webkit-animation-direction:reverse;
-		animation-direction:reverse;
+		-webkit-animation: outT 0.3s backwards;
+		-moz-animation: outT 0.3s backwards;
+		-ms-animation: outT 0.3s backwards;
+		-o-animation: outT 0.3s backwards;
+		animation: outT 0.3s backwards;
+		-webkit-animation-direction: reverse;
+		-moz-animation-direction: reverse;
+		-ms-animation-direction: reverse;
+		-o-animation-direction: reverse;
+		animation-direction: reverse;
 	}
 
 	.navTrigger i:nth-child(2) {
 		margin: 5px 0;
 		-webkit-animation:outM 0.3s backwards;
+		-moz-animation:outM 0.3s backwards;
+		-ms-animation:outM 0.3s backwards;
+		-o-animation:outM 0.3s backwards;
 		animation:outM 0.3s backwards;
 		-webkit-animation-direction:reverse;
+		-moz-animation-direction:reverse;
+		-ms-animation-direction:reverse;
+		-o-animation-direction:reverse;
 		animation-direction:reverse;
 	}
 
 	.navTrigger i:nth-child(3) {
 		-webkit-animation:outBtm 0.3s backwards;
+		-moz-animation:outBtm 0.3s backwards;
+		-ms-animation:outBtm 0.3s backwards;
+		-o-animation:outBtm 0.3s backwards;
 		animation:outBtm 0.3s backwards;
 		-webkit-animation-direction:reverse;
+		-moz-animation-direction:reverse;
+		-ms-animation-direction:reverse;
+		-o-animation-direction:reverse;
 		animation-direction:reverse;
 	}
 
 	.active i:nth-child(1) {
 		-webkit-animation:inT 0.3s forwards;
+		-moz-animation:inT 0.3s forwards;
+		-ms-animation:inT 0.3s forwards;
+		-o-animation:inT 0.3s forwards;
 		animation:inT 0.3s forwards;
 	}
 
 	.active i:nth-child(2) {
 		-webkit-animation:inM 0.3s forwards;
+		-moz-animation:inM 0.3s forwards;
+		-ms-animation:inM 0.3s forwards;
+		-o-animation:inM 0.3s forwards;
 		animation:inM 0.3s forwards;
 	}
 
 	.active i:nth-child(3) {
 		-webkit-animation:inBtm 0.3s forwards;
+		-moz-animation:inBtm 0.3s forwards;
+		-ms-animation:inBtm 0.3s forwards;
+		-o-animation:inBtm 0.3s forwards;
 		animation:inBtm 0.3s forwards;
 	}
 }
@@ -333,6 +381,10 @@ p {
 	text-align: center;
 	background-color: rgb(100, 100, 100);
 	border: 2px solid white;
+	-webkit-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-ms-transition-duration: .3s;
+	-o-transition-duration: .3s;
 	transition-duration: .3s;
 }
 
@@ -358,6 +410,8 @@ p {
 	background-color: #252839;
 	-webkit-animation: bounce 1s infinite;
 	-moz-animation: bounce 1s infinite;
+	-ms-animation: bounce 1s infinite;
+	-o-animation: bounce 1s infinite;
 	animation: bounce 1s infinite;
 }
 
@@ -412,32 +466,35 @@ p {
 	color: green;
 }
 
+#progressContainer {
+	color: white;
+	position: fixed;
+	-webkit-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	-ms-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	transition-duration: .5s;
+	text-align: center;
+}
+
 @media screen and (min-width: 40em) {
 	#progressContainer {
-		color: white;
-		position: fixed;
 		width: 220px;
 		padding: 20px;
 		right: 5px;
 		bottom: 5px;
-		text-align: center;
 		background-color: rgba(50, 50, 50, 1);
-		transition-duration: .5s;
 		z-index: 2000;
 	}
 }
 
 @media screen and (max-width: 39.9375em) {
 	#progressContainer {
-		color: white;
-		position: fixed;
 		width: 100%;
 		padding: 5px;
 		bottom: 0;
-		text-align: center;
 		box-shadow: 0 -2px 1px 0 black;
 		background-color: rgba(50, 50, 50, 1);
-		transition-duration: .5s;
 		opacity: 0.95;
 		z-index: 2000;
 	}
@@ -453,6 +510,10 @@ p {
 	height: 10px;
 	background-color: green;
 	width: 0%;
+	-webkit-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	-ms-transition-duration: .5s;
+	-o-transition-duration: .5s;
 	transition-duration: .5s;
 }
 
@@ -460,6 +521,8 @@ p {
 	background-color: rgba(0, 100, 0, 1) !important;
 	-webkit-animation: bounce 1s infinite;
 	-moz-animation: bounce 1s infinite;
+	-ms-animation: bounce 1s infinite;
+	-o-animation: bounce 1s infinite;
 	animation: bounce 1s infinite;
 }
 
@@ -570,12 +633,20 @@ footer ul {
 .top {
 	float: right;
 	color: white;
+	-webkit-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-ms-transition-duration: .3s;
+	-o-transition-duration: .3s;
 	transition-duration: .3s;
 }
 
 .footer-icon {
 	color: white;
 	margin-bottom: 30px;
+	-webkit-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-ms-transition-duration: .3s;
+	-o-transition-duration: .3s;
 	transition-duration: .3s;
 }
 
@@ -646,6 +717,10 @@ footer ul {
 	position: relative;
 	cursor: pointer;
 	padding: 0;
+	-webkit-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-ms-transition-duration: .3s;
+	-o-transition-duration: .3s;
 	transition-duration: .3s;
 }
 .styled-checkbox + label:before {
@@ -657,6 +732,10 @@ footer ul {
 	height: 20px;
 	background: white;
 	box-shadow: 0 0 0 2px #444966;
+	-webkit-transition-duration: .3s;
+	-moz-transition-duration: .3s;
+	-ms-transition-duration: .3s;
+	-o-transition-duration: .3s;
 	transition-duration: .3s;
 }
 .styled-checkbox:hover + label:before {
@@ -675,9 +754,10 @@ footer ul {
 	width: 2px;
 	height: 2px;
 	box-shadow: 2px 0 0 rgba(0, 0, 0, .2), 4px 0 0 rgba(0, 0, 0, .2), 4px -2px 0 rgba(0, 0, 0, .2), 4px -4px 0 rgba(0, 0, 0, .2), 4px -6px 0 rgba(0, 0, 0, .2);
+	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 .styled-checkbox:checked + label:after {
@@ -689,9 +769,10 @@ footer ul {
 	width: 2px;
 	height: 2px;
 	box-shadow: 2px 0 0 green, 4px 0 0 green, 4px -2px 0 green, 4px -4px 0 green, 4px -6px 0 green;
+	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 

@@ -85,7 +85,7 @@
 			<div class='stepcontent small-12 medium-8 columns'>
 				<p>Download and open Rufus from this <a href='https://rufus.akeo.ie/' target='_blank'>link</a>. Follow the instructions on the page.</p>
 				<hr>
-				<p>There are other ways to create a bootable USB device in Windows, but this tutorial covers using Rufus. Rufus makes the creation of bootable USB's much easier.</p>
+				<p><b>Note:</b> There are other ways to create a bootable USB device in Windows, but this tutorial covers <i>Rufus</i>, a helpful program that makes the creation of bootable USB devices much easier. Another option is to use <i>diskpart</i>, which is a command-line utility built in to Windows.</p>
 				<img src='img/windows/rufus.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -97,9 +97,9 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>2</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>Insert Your USB Flash Drive into a running computer</p>
+				<p>Insert Your USB Flash Drive into your computer.</p>
 				<hr>
-				<p>You can use Windows Explorer to check to verify that the flash drive is connected, as shown in the image below.</p>
+				<p>You can use Windows Explorer to check to verify that the flash drive is connected, as shown in the image below. The flash drive should show up as a drive letter, which is a capital letter followed by a colon. For example, <b>R:</b> is a valid flash drive location.</p>
 				<img src='img/windows/explorer.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -111,9 +111,9 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>3</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>Open Rufus and select your flash drive in the <b>Device</b> dropdown.</p>
+				<p>Open Rufus and select your flash drive in the <b>Device</b> dropdown menu.</p>
 				<hr>
-				<p><b>Note</b>: Be sure that the device you select is your flash drive, not some other disk. The following process will wipe the entire disk, so be sure no critical information is on the flash drive.</p>
+				<div class='caution'><img src='img/caution.png'/><p><b>Caution</b>: Be sure that the device you select is your flash drive, not some other disk. The following process will wipe the entire disk, so be sure any critical information is backed up.</p></div>
 				<img src='img/windows/device.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -127,7 +127,7 @@
 			<div class='stepcontent small-12 medium-8 columns'>
 				<p>Click on the <b>CD</b> icon next to <b>FreeDOS</b> dropdown list.</p>
 				<img src='img/windows/selectISO.png'/>
-				<p>When the dialog box comes up, find and select the ISO for the operating system that you downloaded and then select <b>Open</b></p>
+				<p>When the dialog box comes up, find and select the ISO for the operating system that you downloaded and then select <b>Open.</b></p>
 				<img src='img/windows/explorerISO.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -155,7 +155,7 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>6</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>When the process has finished, it should look like it does in the image below. Your flash drive is ready to be booted!</p>
+				<p>When the process has finished, it should look like it does in the image below.</p>
 				<img src='img/windows/rufusFinished.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -167,7 +167,7 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>7</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>The last step is to verify that the flash drive is removed safely.</p>
+				<p>Next, verify that the flash drive is removed safely.</p>
 				<hr>
 				<p>Safely remove the device as shown in the image below.</p>
 				<img src='img/windows/safeRemove.png'/>
@@ -181,9 +181,7 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>8</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<h2 style='text-align: left;'>Last Steps</h2>
-				<hr>
-				<p>The last step is to boot your computer using the flash drive you just created. This process will vary from computer to computer, and will not be covered in this tutorial. Here is a list of helpful links to get started with this:</p>
+				<p>The last step is to boot your computer using the flash drive you just created. This process will vary from computer to computer, and will not be covered in this tutorial. Most PC's will have you repeatedly press a function key (<b>F1</b>) when the computer is booting up to enter a <b><a href='faq.html#bootmenu' target='_blank'>Boot Menu</a></b>. Here is a list of helpful links to get started with this:</p> 
 				<ul>
 					<li><a href='http://lifehacker.com/5991848/how-to-boot-from-a-cd-or-usb-drive-on-any-pc' target='_blank'>Any Device</a></li>
 					<li><a href='http://www.isunshare.com/windows-password/how-to-set-your-computer-to-boot-from-usb-drive.html' target='_blank'>Booting from USB</a></li>

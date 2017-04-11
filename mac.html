@@ -84,6 +84,8 @@
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>1</div>
 			<div class='stepcontent small-12 medium-8 columns'>
 				<p>Download and open UNetbootin from this <a href='http://unetbootin.github.io/' target='_blank'>link</a>.</p>
+				<hr>
+				<p>UNetbootin is a free program for Mac and Linux that allows the quick creation of a bootable USB device.</p>
 				<img src='img/mac/unetbootin.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -95,15 +97,15 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>2</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>Open the downloaded file. It should be similar to the image below.</p>
+				<p>Open the downloaded file from Safari. The file should look similar to the image below.</p>
 				<hr>
 				<p>Double-Click on <b>UNetbootin</b> to open it.</p>
 				<img src='img/mac/unetbootinopen.png'/>
-				<p>You may run into an error here. If the error box below shows up, then press the <b>Control</b> key on your keyboard and right-click <b>UNetbootin</b>. When the menu comes up, click on <b>Open</b>.</p>
+				<p>You may run into an error here. If the error box below shows up, then press the <b>Control</b> key on your keyboard and right-click <b>UNetbootin</b> at the same time. When the dropdown menu shows up, click <b>Open</b>.</p>
 				<img src='img/mac/unetbootinerror.png'/>
 				<p>Now another box should show up asking for permission to run UNetbootin. Click <b>Open</b> to confirm.</p>
 				<img src='img/mac/unetbootinconfirm.png'/>
-				<p>Enter your administrator credentials for permission.</p>
+				<p>Enter your administrator credentials to authenticate.</p>
 				<img src='img/mac/osascript.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -129,7 +131,7 @@
 			<div class='stepcontent small-12 medium-8 columns'>
 				<p>Select the <b>...</b> button to open the file chooser.</p>
 				<img src='img/mac/openiso.png'/>
-				<p>Navigate to the ISO file that you downloaded and select it.</p>
+				<p>Navigate to the <a href='faq.html#iso' target='_blank'>ISO file</a> that you downloaded and select it.</p>
 				<img src='img/mac/iso.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -141,7 +143,9 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>5</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>Select your USB device from the dropdown shown in the image below.</p>
+				<p>Select your USB device from the dropdown shown in the image below if it is not already selected.</p>
+				<hr>
+				<p><b>Note</b>: If you are not sure which device is your flash drive, open a Terminal window and type in <code>diskutil list</code>. This command will list all of the devices connected to the computer.</p>
 				<img src='img/mac/selectdisk.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -154,6 +158,8 @@
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>6</div>
 			<div class='stepcontent small-12 medium-8 columns'>
 				<p>Select <b>Okay</b> to start the process.</p>
+				<hr>
+				<div class='caution'><img src='img/caution.png'/><p><b>Caution</b>: Be sure all critical data is backed up on the device, as this process will wipe the flash drive.</p></div>
 				<img src='img/mac/okay.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -165,7 +171,9 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>7</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>UNetbootin should do the rest for you.</p>
+				<p>UNetbootin will do the rest for you.</p>
+				<hr>
+				<p><b>Note</b>: This process may take up to ten minutes. It may also appear to freeze briefly in the middle of the process. If this freezing happens, let it sit for some time, and it should finish.</p>
 				<img src='img/mac/process.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
@@ -177,11 +185,28 @@
 		<div class='row'>
 			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>8</div>
 			<div class='stepcontent small-12 medium-8 columns'>
-				<p>When UNetbootin has finished, press <b>Exit</b> to shut it down. Your USB can now be used to boot a PC!</p>
+				<p>When UNetbootin has finished, press <b>Exit</b> to shut it down.</p>
 				<img src='img/mac/finish.png'/>
 			</div>
 			<div class='checkbox-wrapper small-12 medium-3 columns'>
 				<input class='styled-checkbox' id='finish' type='checkbox'><label class='complete' for='finish'>Mark Complete</label>
+			</div>
+		</div>
+	</div>
+	<div class='section'>
+		<div class='row'>
+			<div class='step small-12 medium-1 small-centered medium-uncentered columns'>9</div>
+			<div class='stepcontent small-12 medium-8 columns'>
+				<p>The last step is to boot your computer using the flash drive you just created. This process will vary from computer to computer, and will not be covered in this tutorial. A Mac cannot be dual booted with Linux, so you must boot with a PC. Most PC's will have you repeatedly press a function key (<b>F1</b>) when the computer is booting up to enter a <b><a href='faq.html#bootmenu' target='_blank'>Boot Menu</a></b>. Here is a list of helpful links to get started with this:</p> 
+				<ul>
+					<li><a href='http://lifehacker.com/5991848/how-to-boot-from-a-cd-or-usb-drive-on-any-pc' target='_blank'>Any Device</a></li>
+					<li><a href='http://www.isunshare.com/windows-password/how-to-set-your-computer-to-boot-from-usb-drive.html' target='_blank'>Booting from USB</a></li>
+					<li><a href='http://blog.lenovo.com/en/blog/how-to-enter-the-bios-setup-utility-or-boot-menu-with-windows-8-1' target='_blank'>Lenovo</a></li>
+					<li><a href='https://www.lifewire.com/how-to-boot-from-a-usb-device-2626091' target='_blank'>Another Guide</a></li>
+				</ul>
+			</div>
+			<div class='checkbox-wrapper small-12 medium-3 columns'>
+				<input class='styled-checkbox' id='lastSteps' type='checkbox'><label class='complete' for='lastSteps'>Mark Complete</label>
 			</div>
 		</div>
 	</div>

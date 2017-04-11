@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-	var mobile = $('#mobile').css('display') == 'none';
-
 	$('a[href="#"]').click(function() {
 		$('html, body').animate({ scrollTop: 0 }, 'slow');
 	});
@@ -9,11 +7,12 @@ $(document).ready(function() {
 	$('a[href^="#"]').on('click', function(e) {
 	    e.preventDefault();
 
+	    var mobile = $('#mobile').css('display') == 'none';
 	    var target = this.hash;
 	    var $target = $(target);
 
 	    $('html, body').animate({
-	        'scrollTop': $target.offset().top
+	        'scrollTop': $target.offset().top - (mobile ? 50 : 0)
 	    }, 'slow', 'swing', function() {
 	        window.location.hash = target;
 	    });
@@ -45,7 +44,7 @@ $(document).ready(function() {
 
 	var checkboxes = document.querySelectorAll('input[type=checkbox]');
 
-	var cookie = getCookie('check');
+	var cookie = getCookie('check' + window.location.pathname);
 	if(cookie.length == checkboxes.length) {
 		for(var i = 0; i < cookie.length; i++) {
 			if(cookie[i] == '1') {
@@ -65,6 +64,7 @@ $(document).ready(function() {
 
 	for(var i = 0; i < checkboxes.length; i++) {
 		checkboxes[i].addEventListener('change', function(e) {
+			var mobile = $('#mobile').css('display') == 'none';
 			$change = ($('input:checkbox:checked').length / checkboxes.length) * 100;
 			$('#percent').css('width', $change + '%');
 			$('#completeamt').html($change.toFixed());
@@ -92,7 +92,7 @@ window.onbeforeunload = function() {
 	for(var i = 0; i < checkboxes.length; i++) {
 		tmp += checkboxes[i].checked ? '1' : '0';
 	}
-	setCookie('check', tmp, 365);
+	setCookie('check' + window.location.pathname, tmp, 365);
 }
 
 function setCookie(cname, cvalue, exdays) {

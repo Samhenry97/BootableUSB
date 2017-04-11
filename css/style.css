@@ -536,9 +536,17 @@ p {
 	animation: bounce 1s infinite;
 }
 
-@media screen and (min-width: 39.9375em) {
+@media screen and (min-width: 40em) {
 	.q, .a {
 		margin-left: 20px;
+	}
+
+	.q {
+		padding-left: 14px;
+	}
+
+	.a {
+		padding-left: 15px;
 	}
 
 	.question h5 {
@@ -550,6 +558,14 @@ p {
 	.q, .a {
 		margin: auto;
 		margin-bottom: 20px;
+	}
+
+	.q {
+		padding-left: 10px;
+	}
+
+	.a {
+		padding-left: 11px;
 	}
 
 	.question, .answer {
@@ -591,13 +607,11 @@ p {
 
 .q {
 	padding-top: 5px;
-	padding-left: 14px;
 	background-color: #FC4A1A;
 }
 
 .a {
 	padding-top: 4px;
-	padding-left: 15px;
 	background-color: green;
 }
 

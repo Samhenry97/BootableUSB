@@ -169,7 +169,7 @@ void *handle_client(void *arg) {
     eatStream(&stream);
 
     fprintf(stream, "%s\r\n", responseCode);
-    fprintf(stream, "%s\r\n", "Access-Control-Allow-Origin: *");
+    fprintf(stream, "%s\r\n", "Access-Control-Allow-Origin: http://bootableusb.herokuapp.com");
     fprintf(stream, "Content-Type: %s\r\n", contentType);
     fprintf(stream, "Content-Length: %d\r\n\r\n", (int) responseStats.st_size);
 

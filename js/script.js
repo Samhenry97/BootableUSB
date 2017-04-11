@@ -85,6 +85,7 @@ $(document).ready(function() {
 			checkboxes[i].checked = false;
 			$('#percent').css('width', '0%');
 			$('#completeamt').html('0');
+			$('#progressContainer').removeClass('finished');
 		}
 	});
 

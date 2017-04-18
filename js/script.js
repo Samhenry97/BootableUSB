@@ -61,16 +61,17 @@ $(document).ready(function() {
 	for(var i = 0; i < checkboxes.length; i++) {
 		checkboxes[i].addEventListener('change', function(e) {
 			var mobile = $('#mobile').css('display') == 'none';
+			var caller = e.srcElement || e.target;
 			$change = ($('input:checkbox:checked').length / checkboxes.length) * 100;
 			$('#percent').css('width', $change + '%');
 			$('#completeamt').html($change.toFixed());
+			$(caller).next().html(caller.checked ? 'Mark Incomplete' : 'Mark Complete');
 
 			if($change == 100) {
 				$('#progressContainer').addClass('finished');
 			} else {
 				$('#progressContainer').removeClass('finished');
-				
-				var caller = e.srcElement || e.target;
+			
 				if(caller.checked) {
 					$('html, body').animate({
 						'scrollTop': $(caller).parent().parent().parent().next().offset().top - (mobile ? 50 : 0)
